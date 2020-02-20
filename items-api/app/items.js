@@ -91,7 +91,7 @@ router.post("/", upload.single("image"), async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", upload.single("image"), async (req, res) => {
   const errorName = { error: "Name of item must be present in the request" };
   const errorIDCategory = {error: "Category of item must be present in the request"};
   const errorIDPlace = {error: "Place of item must be present in the request"};
